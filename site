@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encantarí - Agência de Design</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+    <div class="container">
+        <h1 class="logo">Encantarí</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#orcamento">Orçamento</a>
+            <a href="#portfólio">Portfólio</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Banner Principal com Carrossel -->
+<section id="home" class="banner">
+    <div class="carousel">
+        <div class="slide active" style="background-image: url('images/social_media.jpg');">
+            <h2>Redes Sociais</h2>
+            <p>Engajamento com estilo e identidade.</p>
+            <a href="#orcamento" class="cta">Solicite Orçamento</a>
+        </div>
+        <div class="slide" style="background-image: url('images/invitations.jpg');">
+            <h2>Convites Personalizados</h2>
+            <p>Convites que encantam e personalizam momentos.</p>
+            <a href="#orcamento" class="cta">Solicite Orçamento</a>
+        </div>
+    </div>
+    <button class="carousel-btn prev">◀</button>
+    <button class="carousel-btn next">▶</button>
+</section>
+
+<!-- Seção Sobre -->
+<section id="sobre" class="about">
+    <div class="container">
+        <h2>Sobre a Encantarí</h2>
+        <p>Somos uma agência de design digital que combina criatividade e sofisticação para oferecer soluções personalizadas. Nossa expertise abrange redes sociais, convites, identidade visual e lembrancinhas, garantindo que cada detalhe do seu projeto seja encantador e memorável.</p>
+    </div>
+</section>
+
+<!-- Formulário de Orçamento -->
+<section id="orcamento" class="form-section">
+    <div class="container">
+        <h2>Solicitar Orçamento</h2>
+        <form action="send_orcamento.php" method="post" enctype="multipart/form-data">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required>
+
+            <label for="servico">Tipo de Serviço:</label>
+            <select id="servico" name="servico" required>
+                <option value="redes_sociais">Postagens para Redes Sociais</option>
+                <option value="convites">Convites de Aniversário</option>
+                <option value="identidade_visual">Identidade Visual</option>
+                <option value="lembrancinhas">Lembrancinhas</option>
+            </select>
+
+            <label for="quantidade">Quantidade (se aplicável):</label>
+            <input type="number" id="quantidade" name="quantidade" min="1">
+
+            <label for="descricao">Descrição do Projeto:</label>
+            <textarea id="descricao" name="descricao" rows="4" required></textarea>
+
+            <label for="prazo">Prazo Desejado:</label>
+            <input type="date" id="prazo" name="prazo" required>
+
+            <label for="referencias">Referências Visuais (opcional):</label>
+            <input type="file" id="referencias" name="referencias[]" multiple>
+
+            <label for="orcamento">Orçamento Estimado (opcional):</label>
+            <input type="text" id="orcamento" name="orcamento">
+
+            <button type="submit">Solicitar Orçamento</button>
+        </form>
+    </div>
+</section>
+
+<!-- Portfólio (Placeholder) -->
+<section id="portfólio" class="portfolio">
+    <div class="container">
+        <h2>Portfólio</h2>
+        <p>Explore nossos trabalhos e veja como podemos encantar seus projetos.</p>
+        <!-- Galeria de Imagens (para adicionar posteriormente) -->
+    </div>
+</section>
+
+<!-- Formulário de Contato -->
+<section id="contato" class="form-section">
+    <div class="container">
+        <h2>Entre em Contato</h2>
+        <form action="send_contato.php" method="post">
+            <label for="nome_contato">Nome Completo:</label>
+            <input type="text" id="nome_contato" name="nome_contato" required>
+
+            <label for="email_contato">E-mail (opcional):</label>
+            <input type="email" id="email_contato" name="email_contato">
+
+            <label for="telefone_contato">Telefone:</label>
+            <input type="tel" id="telefone_contato" name="telefone_contato" required>
+
+            <label for="assunto">Assunto:</label>
+            <select id="assunto" name="assunto" required>
+                <option value="duvidas">Dúvidas Gerais</option>
+                <option value="suporte">Suporte</option>
+                <option value="parcerias">Parcerias</option>
+            </select>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>© 2023 Encantarí. Todos os direitos reservados.</p>
+        <div class="social-links">
+            <a href="#">Instagram</a> | <a href="#">WhatsApp</a>
+        </div>
+    </div>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>
+/* Estilo Geral */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    margin: 0;
+    background-color: #fdfdfd;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+    background: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.navbar nav a {
+    margin: 0 15px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Banner e Carrossel */
+.banner {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+}
+
+.carousel .slide {
+    display: none;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.slide.active {
+    display: flex;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+/* Formulários */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+input, select, textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background: #007bff;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+// scripts.js
+
+document.addEventListener("DOMContentLoaded", function() {
+    const slides = document.querySelectorAll(".slide");
+    const nextButton = document.querySelector(".carousel-btn.next");
+    const prevButton = document.querySelector(".carousel-btn.prev");
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === index);
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    nextButton.addEventListener("click", nextSlide);
+    prevButton.addEventListener("click", prevSlide);
+    setInterval(nextSlide, 5000);
+
+    // Validação dos formulários
+    function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function validateForm(event) {
+        const requiredFields = event.target.querySelectorAll("[required]");
+        for (const field of requiredFields) {
+            if (!field.value.trim()) {
+                alert("Por favor, preencha todos os campos obrigatórios.");
+                event.preventDefault();
+                return;
+            }
+        }
+    }
+
+
+    document.querySelector("#orcamento form").addEventListener("submit", validateForm);
+    document.querySelector("#contato form").addEventListener("submit", validateForm);
+});
+meusite/
+├── index.html
+├── styles.css
+├── scripts.js
+├── images/
+│   ├── social_media.jpg
+│   └── invitations.jpg
